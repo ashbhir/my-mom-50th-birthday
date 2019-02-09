@@ -79,6 +79,12 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('dist/fonts'));
 });
 
+// Moves all fonts into /dist folder
+gulp.task('favico', function () {
+    return gulp.src(['*.ico'])
+        .pipe(gulp.dest('dist/'));
+});
+
 // Gulp will delete the `dist` folder for you whenever gulp clean:dist is run.
 gulp.task('clean:dist', function () {
     return del.sync('dist');
@@ -94,7 +100,7 @@ gulp.task('watch', ['browser-sync'], function () {
 
 gulp.task('build', function (callback) {
     runSequence('clean:dist',
-        ['useref', 'js', 'css', 'lib', 'images', 'fonts'],
+        ['useref', 'js', 'css', 'lib', 'images', 'fonts', 'favico'],
         callback
     )
 });
