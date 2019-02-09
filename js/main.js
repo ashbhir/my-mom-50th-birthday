@@ -6,6 +6,7 @@
     demoElement: document.getElementsByClassName('demo'),
   }
   let TOTAL_SLIDES;
+  let isPrevNavHidden = true;
 
   window.CanvasSlideshow = function (options) {
 
@@ -65,7 +66,7 @@
       fontWeight: "bold",
       letterSpacing: 3,
       wordWrap: true,
-      wordWrapWidth: 300
+      wordWrapWidth: 400
     });
 
 
@@ -91,8 +92,6 @@
 
       // Enable Interactions
       stage.interactive = true;
-
-      console.log(renderer.view.style);
 
       // Fit renderer to the screen
       if (options.fullScreen === true) {
@@ -314,6 +313,9 @@
           // setSlidesLeftContent(slidesLeft);
           setActiveDemoItem(finalSlideIndex);
           setByWhom(finalSlideIndex);
+          if (isPrevNavHidden) {
+            showPrevNavItem();
+          }
         }, 1500);
         return false;
 
@@ -360,7 +362,7 @@
         that.loadPixiSprites(options.pixiSprites);
 
         TOTAL_SLIDES = options.pixiSprites.length;
-        setSlidesLeftContent(TOTAL_SLIDES);
+        // setSlidesLeftContent(TOTAL_SLIDES);
       });
 
 
@@ -401,6 +403,11 @@
         i === activeDemoIndex && demoItem.classList.add('demo--current');
       }
 
+    }
+
+    function showPrevNavItem() {
+      document.getElementsByClassName('scene-nav--prev')[0].style.visibility = 'visible';
+      isPrevNavHidden = false;
     }
 
     /// ---------------------------

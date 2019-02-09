@@ -14,7 +14,7 @@ canvas {
 	background: none;
 	border: 0;
 	right: 0;
-	padding: 1.5em;
+	padding: 0.5em;
 	color: var(--color-nav);
 }
 
@@ -24,6 +24,7 @@ canvas {
 
 .scene-nav--prev {
 	left: 0;
+	visibility: hidden;
 }
 
 .slide-wrapper {
