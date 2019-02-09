@@ -94,7 +94,7 @@ gulp.task('watch', ['browser-sync'], function () {
 
 gulp.task('build', function (callback) {
     runSequence('clean:dist',
-        ['useref', 'js', 'css', 'lib', 'images', 'fonts'],
+        ['useref', 'js', 'css', 'lib', 'images', 'fonts', 'favico'],
         callback
     )
 });
