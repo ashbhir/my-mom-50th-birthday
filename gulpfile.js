@@ -75,7 +75,7 @@ gulp.task('images', function () {
 
 // Moves all fonts into /dist folder
 gulp.task('fonts', function () {
-    return gulp.src('app/fonts/**/*')
+    return gulp.src('fonts/**/*')
         .pipe(gulp.dest('dist/fonts'));
 });
 

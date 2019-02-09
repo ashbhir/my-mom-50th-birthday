@@ -311,7 +311,7 @@
         that.moveSlider(finalSlideIndex);
         let slidesLeft = TOTAL_SLIDES - finalSlideIndex;
         window.setTimeout(() => {
-          setSlidesLeftContent(slidesLeft);
+          // setSlidesLeftContent(slidesLeft);
           setActiveDemoItem(finalSlideIndex);
           setByWhom(finalSlideIndex);
         }, 1500);
@@ -339,7 +339,7 @@
         that.moveSlider(finalSlideIndex);
         let slidesLeft = TOTAL_SLIDES - finalSlideIndex;
         window.setTimeout(() => {
-          setSlidesLeftContent(slidesLeft);
+          // setSlidesLeftContent(slidesLeft);
           setActiveDemoItem(finalSlideIndex);
           setByWhom(finalSlideIndex);
         }, 1500);
@@ -353,12 +353,16 @@
 
     this.init = function () {
 
+      const main_font = new FontFace('Comic Sans MS', 'url(fonts/comic-sans-ms.ttf)');
+      main_font.load().then((loaded_face) => {
+        document.fonts && document.fonts.add(loaded_face);
+        that.initPixi();
+        that.loadPixiSprites(options.pixiSprites);
 
-      that.initPixi();
-      that.loadPixiSprites(options.pixiSprites);
+        TOTAL_SLIDES = options.pixiSprites.length;
+        setSlidesLeftContent(TOTAL_SLIDES);
+      });
 
-      TOTAL_SLIDES = options.pixiSprites.length;
-      setSlidesLeftContent(TOTAL_SLIDES);
 
       /*
       if ( options.fullScreen === true ) {
