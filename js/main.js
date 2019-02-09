@@ -311,8 +311,8 @@
         let slidesLeft = TOTAL_SLIDES - finalSlideIndex;
         window.setTimeout(() => {
           // setSlidesLeftContent(slidesLeft);
-          setActiveDemoItem(finalSlideIndex);
-          setByWhom(finalSlideIndex);
+          // setActiveDemoItem(finalSlideIndex);
+          // setByWhom(finalSlideIndex);
           if (isPrevNavHidden) {
             showPrevNavItem();
           }
@@ -342,8 +342,8 @@
         let slidesLeft = TOTAL_SLIDES - finalSlideIndex;
         window.setTimeout(() => {
           // setSlidesLeftContent(slidesLeft);
-          setActiveDemoItem(finalSlideIndex);
-          setByWhom(finalSlideIndex);
+          // setActiveDemoItem(finalSlideIndex);
+          // setByWhom(finalSlideIndex);
         }, 1500);
 
       }
