@@ -127,7 +127,7 @@
 
 		for (var i = 0; i < spriteImages.length; i++) {
 			var img = spriteImages[i];
-			spriteImagesSrc.push(img.getAttribute('data-src'));
+			spriteImagesSrc.push(img.getAttribute('src'));
 			if (img.nextElementSibling) {
 				byWhom.push(img.nextElementSibling.getAttribute('data-by'));
 				texts.push(img.nextElementSibling.innerHTML);
